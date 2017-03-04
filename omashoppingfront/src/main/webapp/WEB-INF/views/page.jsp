@@ -60,6 +60,11 @@
    </c:if>
    
    
+   
+   <c:if test="${userClickProducts == true}">
+   <%@include file="ProductDetails.jsp" %>
+   </c:if>
+   
     <!-- /.container -->
 </div>
    

@@ -26,6 +26,27 @@ public class PageController {
 		return mv;
 	}
 	
+	@RequestMapping(value="/products")
+	public ModelAndView getAllProducts()
+	{
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","All Products");
+		mv.addObject("userClickProducts", true);
+		return mv;
+	}
+	
+	
+	@RequestMapping(value="/show/product/{id}")
+	public ModelAndView getProduct(@PathVariable("id") int id)
+	{
+		ModelAndView mv = new ModelAndView("page");
+		mv.addObject("title","Product Description");
+		mv.addObject("greeting",id);
+		return mv;
+	}
+	
+	
+	
 	
 	@RequestMapping(value={"/login","/Login"})
 	public ModelAndView login()
