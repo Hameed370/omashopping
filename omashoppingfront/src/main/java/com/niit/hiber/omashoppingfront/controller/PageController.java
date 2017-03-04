@@ -8,11 +8,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class PageController {
 	
-	@RequestMapping(value={"/","/home","/index"})
+	@RequestMapping(value={"/","/home","/index","/Home"})
 	public ModelAndView index()
 	{
 		ModelAndView mv = new ModelAndView("page");
-		mv.addObject("greeting","Welcome to Spring Web MVC");
+		mv.addObject("title","Home");
+		mv.addObject("userClickHome", true);
 		return mv;
 	}
 	
@@ -26,6 +27,14 @@ public class PageController {
 	}
 	
 	
+	@RequestMapping(value={"/login","/Login"})
+	public ModelAndView login()
+	{
+		ModelAndView mv = new ModelAndView("Login");
+		mv.addObject("title","Login");
+		mv.addObject("userClickLogin", true);
+		return mv;
+	}
 	
 	
 

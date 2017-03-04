@@ -16,4 +16,11 @@
 
 <context:component-scan base-package="com.niit.hiber.omashoppingfront.controller"></context:component-scan>
 
+ <!-- 
+loading static resources -->
+<mvc:annotation-driven />
+<mvc:resources location="/assets/" mapping="/resources/**"></mvc:resources>
+
+
+
     </beans>
