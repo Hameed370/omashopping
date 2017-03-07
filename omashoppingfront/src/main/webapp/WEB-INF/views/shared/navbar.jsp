@@ -14,10 +14,13 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li id="Products">
-                        <a href="${contextRoot}/Products">Products</a>
+                        <a href="${contextRoot}/products">Products</a>
                     </li>
                     <li id="Contact">
                         <a href="#">ContactUs</a>
+                    </li>
+                    <li id="Admin">
+                    <a href="${contextRoot}/admin/products">Admin</a>
                     </li>
                     <li id="Login">
                         <a href="${contextRoot}/Login">Login</a>
