@@ -6,14 +6,18 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import com.niit.hiber.omashoppingbackend.dao.CartDAO;
 import com.niit.hiber.omashoppingbackend.dao.UserDAO;
+import com.niit.hiber.omashoppingbackend.dto.Cart;
 import com.niit.hiber.omashoppingbackend.dto.User;
 
 public class UserTestCase {
 	
 	private static AnnotationConfigApplicationContext context;
 	
-
+	//@Autowired
+	private static CartDAO cartDAO;
+	
 	private static UserDAO userDAO;
 	private User user;
 	
@@ -25,6 +29,7 @@ public class UserTestCase {
 		context.scan("com.niit.hiber.omashoppingbackend");
 		context.refresh();
 		userDAO = (UserDAO)context.getBean("userDAO");
+		cartDAO = (CartDAO)context.getBean("cartDAO");
 	}
 	
 	
@@ -36,26 +41,28 @@ public class UserTestCase {
 	{
 		user = new User();
 		//user.setId(2);
-		user.setFirstname("Niyaz");
-		user.setLastname("ahmed");
-		user.setContact("879576848");
-		user.setEmail("nyz.admed@gmail.com");
-		user.setPassword("pass@123");
-		user.setUsername("nyzoma");
-		user.setRole("customer");
+		user.setFirstName("chirag");
+		user.setLastName("singla");
+		user.setEmail("chirag@gmail.com");
 		user.setEnabled(true);
+		user.setPassword("pass@123");
+		user.setRole("customer");
+		user.setContactNumber("9878923456");
+		Cart cart = new Cart();
+		cart.setUser(user);
+		cartDAO.add(cart);
 		assertEquals("Successfully added a category inside the table", true,userDAO.add(user));
 	}
 	*/
 	
-	@Test
+	/*@Test
 	public void testGetUser()
 	{
 		user = userDAO.get(2);
 		assertEquals("Successfully fetched a category from the table", "customer",user.getRole());
 		
 	}
-	
+	*/
 	
 	
 	/*@Test

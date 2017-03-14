@@ -37,7 +37,7 @@ $(function(){
 	        {data: 'price'},
 	        {data: null,
 	        	mRender: function ( data, type, row ) {
-	                return '<a class="btn btn-primary" href="/omashoppingfront/show/'+row.id+'/product">View Item</a> &nbsp;<a class="btn btn-primary" href="'+data+'">Add To Cart</a> ';
+	                return '<a class="btn btn-primary" href="/omashoppingfront/show/'+row.id+'/product">View Item</a> &nbsp;<a class="btn btn-primary" href="/omashoppingfront/customer/cart/addtocart/'+row.id+'">Add To Cart</a> ';
 	            }	
 	        }
 	        

@@ -63,14 +63,14 @@ public class CategoryTestCase {
 		
 	}
 	*/
-	
+	/*
 	@Test
 	public void testDeleteCategory()
 	{
 		category = categoryDAO.get(3);
 		assertEquals("Successfully deleted a category from the table", true,categoryDAO.delete(category));
 		
-	}
+	}*/
 	/*
 	
 	@Test

@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Transient;
+
+import org.springframework.web.multipart.MultipartFile;
 
 @Entity
 public class Category {
@@ -16,11 +19,37 @@ public class Category {
 	private int id;
 	private String name;
 	private String description;
+	
 	@Column(name="image_url")
-	private String imageUrl;
+	private String imageurl;
+	public String getImageurl() {
+		return imageurl;
+	}
+
+	public void setImageurl(String imageurl) {
+		this.imageurl = imageurl;
+	}
+
 	private boolean is_active = true;
 	
 	/*Getter and Setters for the class*/
+	
+	
+	// MULTIPART FIELD>
+@Transient
+	private MultipartFile files;
+
+
+	
+
+	public MultipartFile getFiles() {
+		return files;
+	}
+
+	public void setFiles(MultipartFile files) {
+		this.files = files;
+	}
+
 	
 	
 	public boolean isIs_active() {
@@ -47,16 +76,14 @@ public class Category {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getImageUrl() {
-		return imageUrl;
-	}
-	public void setImageUrl(String imageUrl) {
-		this.imageUrl = imageUrl;
-	}
+	
+	
+
+
 	@Override
 	public String toString() {
-		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageUrl
-				+ ", is_active=" + is_active + "]";
+		return "Category [id=" + id + ", name=" + name + ", description=" + description + ", imageUrl=" + imageurl
+				+ ", is_active=" + is_active + ", files=" + files + "]";
 	}
 	
 	

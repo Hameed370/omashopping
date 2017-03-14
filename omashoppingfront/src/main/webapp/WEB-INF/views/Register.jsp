@@ -1,36 +1,7 @@
 
-<div class="container">
-
-	<div class="row">
-
-		<div id="login" class="col-sm-6">
-			<div>
-				<H1>Login</H1>
-			</div>
-			<form class="form-horizontal">
-				<div class="form-group">
-					<label for="uname" class="col-sm-2 control-label">Username:</label>
-					<div class="col-sm-9">
-						<input type="text" id="uname" name="username" class="form-control" />
-					</div>
-				</div>
-				<div class="form-group">
-					<label for="Pass" class="col-sm-2 control-label">Password:</label>
-					<div class="col-sm-9">
-						<input type="password" name="Pass" class="form-control" />
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-sm-offset-2 col-sm-9">
-						<input type="submit" class="btn btn-primary" value="Submit" />
-					</div>
-				</div>
-			</form>
-
-		</div>
-
-
 		<!-- register form code -->
+		<div class="container">
+		<div id="row" >
 		<div id="register" class="col-sm-6">
 			<div class="main-login main-center">
 				<div>

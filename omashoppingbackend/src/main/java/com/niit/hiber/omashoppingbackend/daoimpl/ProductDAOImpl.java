@@ -25,9 +25,17 @@ public class ProductDAOImpl implements ProductDAO {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Product> list() {
-		return sessionFactory.getCurrentSession().createQuery("FROM Product").list();
+		return sessionFactory.getCurrentSession().createQuery("FROM Product where active = true").list();
 	}
 
+	
+	@SuppressWarnings("unchecked")
+	public List<Product> listAll()
+	{
+		return sessionFactory.getCurrentSession().createQuery("FROM Product").list();
+	}
+	
+	
 	@Override
 	public Product get(int id) {
 		return sessionFactory.getCurrentSession().get(Product.class, Integer.valueOf(id)) ;
@@ -75,6 +83,8 @@ public class ProductDAOImpl implements ProductDAO {
 			return false;
 		}
 	}
+
+
 	
 		/*static 
 	{

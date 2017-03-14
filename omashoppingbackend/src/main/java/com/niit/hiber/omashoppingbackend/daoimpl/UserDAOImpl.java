@@ -11,7 +11,6 @@ import com.niit.hiber.omashoppingbackend.dao.UserDAO;
 import com.niit.hiber.omashoppingbackend.dto.User;
 
 
-
 @Repository("userDAO")
 @Transactional
 public class UserDAOImpl implements UserDAO {
@@ -28,7 +27,6 @@ public class UserDAOImpl implements UserDAO {
 		return sessionFactory.getCurrentSession().createQuery("FROM User where enabled = true").list();
 	}
 
-	@Override
 	public User get(int id) {
 		
 		return sessionFactory.getCurrentSession().get(User.class,Integer.valueOf(id));
@@ -38,7 +36,7 @@ public class UserDAOImpl implements UserDAO {
 	public boolean add(User user) {
 		try	
 		{
-			sessionFactory.getCurrentSession().persist(user);		
+			sessionFactory.getCurrentSession().persist(user);	
 			return true;
 		}catch(Exception ex)
 		{
@@ -72,6 +70,12 @@ sessionFactory.getCurrentSession().update(user);
 			ex.printStackTrace();
 			return false;
 		}
+	}
+
+	@Override
+	public User getUserByUserName(String username) {
+		
+		return sessionFactory.getCurrentSession().createQuery("FROM User where email = '" + username+"'" , User.class).getSingleResult();
 	}
 
 }

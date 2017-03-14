@@ -19,9 +19,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="omashop">
-<meta name="author" content="Hameed">
+<meta name="author" content="niyaz">
 
-<title>Homepage ${title}</title>
+<title>BIILING</title>
 
 <!-- Bootstrap Core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
@@ -46,74 +46,19 @@
 
 <script type="text/javascript" src="${js}/modernizr-2.6.2.min.js"></script>
 
+
 </head>
-
 <body>
-
-	<div class="wrapper">
-
-
-		<!-- Navigation -->
-		<%@include file="./shared/navbar.jsp"%>
-
-
-		<div class="content">
-			<!-- Page Content -->
-			<!-- If user clicks home then do this -->
-
-			<c:if test="${userClickHome == true}">
-				<%@include file="Home.jsp"%>
-			</c:if>
-
-			<!-- If user clicks LOgin then do this -->
-			<c:if test="${userClickLogin == true}">
-				<%@include file="login.jsp"%>
-			</c:if>
-
-
-			<c:if test="${userClickProduct == true}">
-				<%@include file="ProductDetails.jsp"%>
-			</c:if>
-
-
-			<c:if test="${userClickAdmin == true }">
-				<%@include file="CategoryPage.jsp"%>
-			</c:if>
-
-			<c:if test="${userClickAdminProduct == true }">
-				<%@include file="AdminProduct.jsp"%>
-			</c:if>
-
-
-			<c:if test="${userClickSProduct == true}">
-				<%@include file="SingleProduct.jsp"%>
-			</c:if>
-			
-			<c:if test="${userClickViewCart == true}">
-			<%@include file="Cart.jsp"%>
-			</c:if>
-			
-			<c:if test="${userClickCheckout == true}">
-			<%@include file="Checkout.jsp" %>
-			</c:if>
-			
-			<c:if test="${userClickAddCart == true}">
-			<%@include file="ProductDetails.jsp" %>
-			</c:if>
-			
-
-
-			<!-- /.container -->
-		</div>
-
-
-		<!-- Footer -->
-		<%@include file="./shared/footer.jsp"%>
-
-		<!-- /.container -->
-
-
+	<div class="content" align="center">
+	<img src="${img}/logo.jpg" alt="oma" height="200" width="200" align="center"  class="img-circle"/>
+		
+			<h2>You have entered all your details.</h2>
+			<h2> Do you need to edit or Continue?</h2><br>
+			<a  href="${flowExecutionUrl}&_eventId_submit" class="btn btn-primary btn-lg" >Continue</a>
+			<a href="${flowExecutionUrl}&_eventId_edit" class="btn btn-primary btn-lg">Edit</a>
+		
 	</div>
-</body>
 
+
+</body>
 </html>

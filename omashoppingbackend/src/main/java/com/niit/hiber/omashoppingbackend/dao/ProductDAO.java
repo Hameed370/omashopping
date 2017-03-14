@@ -7,6 +7,7 @@ import com.niit.hiber.omashoppingbackend.dto.Product;
 public interface ProductDAO {
 
 	List<Product>  list();
+	List<Product> listAll();
 	Product get(int id);
 	boolean add(Product product);
 	boolean update(Product product);

@@ -1,9 +1,11 @@
+<%@taglib prefix="f" uri="http://www.springframework.org/tags/form" %>
+
 <script>
 $(function(){
 	
 	$('#adminproduct').DataTable( {
 		ajax: {
-	        url: '/omashoppingfront/admin/products/all',
+	        url: '/omashoppingfront/myadmin/products/all',
 	        dataSrc: ''
 	    },
 	    columns: [
@@ -20,7 +22,7 @@ $(function(){
 	        {data:'qty'},
 	        {data: null,
 	        	mRender: function ( data, type, row ) {
-	                return '<a class="btn btn-primary" href="/omashoppingfront/show/'+row.id+'/product">View Item</a> &nbsp;<a class="btn btn-primary" href="/edit/'+row.id+'/product">Edit Item</a>&nbsp;<a class="btn btn-primary" href="/edit/'+row.id+'/">Delete Item</a> ';
+	                return '<a class="btn btn-primary" href="/omashoppingfront/myadmin/edit/product/'+row.id+'">Edit Item</a>&nbsp;<a class="btn btn-primary" href="/edit/'+row.id+'/">Delete Item</a> ';
 	            }	
 	        }
 	        
@@ -34,56 +36,17 @@ $(function(){
 
 
 </script>
-<!--  
+
+
+
 
 <div class="container">
-	<div class="container col-md-offset-2 col-md-col-md-8">
-		<form:form action="/onlineshopping/admin/add/category" method="POST"
-			modelAttribute="category" class="form-horizontal">
-			<form:hidden path="id" />
+<div class="row">
+<button class="btn btn-success">Add Product</button>
 
-			<div class="form-group">
-				<label class="col-md-2 control-label" for="name">Category
-					Name</label>
-				<div class="col-sm-6">
-					<form:input type="text" path="name" id="name"
-						class="form-control input-sm" />
-					<div class="has-error">
-						<form:errors path="name" class="help-inline" />
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-2 control-label" for="imageUrl">Upload
-					Image</label>
-				<div class="col-sm-6">
-					<form:input type="text" path="imageUrl" id="imageUrl"
-						class="form-control input-sm" />
-					<div class="has-error">
-						<form:errors path="imageUrl" class="help-inline" />
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-md-2 control-label" for="description">Description</label>
-				<div class="col-sm-6">
-					<form:input type="text" path="description" id="description"
-						class="form-control input-sm" />
-					<div class="has-error">
-						<form:errors path="description" class="help-inline" />
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-offset-2 col-sm-10">
-					<button type="submit" class="btn btn-default">Submit</button>
-				</div>
-			</div>
-		</form:form>
-	</div>
 </div>
 
--->
+<div style="height:15px"></div>
 
 <div class="container">
 	<div class="row">
@@ -99,4 +62,5 @@ $(function(){
 			</thead>
 		</table>
 	</div>
+</div>
 </div>

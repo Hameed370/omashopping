@@ -1,4 +1,4 @@
-<%@ taglib prefix="s" uri="http://www.springframework.org/tags"%> 
+<%-- <%@ taglib prefix="s" uri="http://www.springframework.org/tags"%> 
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page isELIgnored="false" %>
 <!DOCTYPE html>
@@ -54,11 +54,12 @@ footer
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<div class="container">
+ --%>
+ <div class="container">
 <table class="table tale-bordered">
 
 <td class="col-sm-6 col-md-6">
-<img src="${imgs}/${product.id}.jpg"  />
+<img src="/omashoppingfront/resources/images/${product.id}.jpg"  />
 <%-- ${imgs}/${product.id} +".jpg" --%>
 </td>
 <td class="col-sm-6 col-md-6">
@@ -76,7 +77,7 @@ footer
 <td>${product.qty}</td>
 </tr>
 <tr>
-<td allign="center"><button class="btn btn-success">Add To Cart</button></td>
+<td allign="center"><button class="btn btn-success" href="${contextRoot}/customer/cart/addtocart/${product.id}">Add To Cart</button></td>
 </tr>
 </table>
 </td>
@@ -84,5 +85,5 @@ footer
 </table>
 
 </div>
-</body>
-</html>
+<!-- </body>
+</html> -->

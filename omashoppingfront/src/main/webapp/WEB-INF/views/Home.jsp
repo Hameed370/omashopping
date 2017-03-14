@@ -77,7 +77,7 @@
                                 <h4 class="pull-right">$64.99</h4>
                                 <h4><a href="#">Second Product</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>This is a short description.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">12 reviews</p>
@@ -99,7 +99,7 @@
                                 <h4 class="pull-right">$74.99</h4>
                                 <h4><a href="#">Third Product</a>
                                 </h4>
-                                <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                <p>This is a short description.</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">31 reviews</p>

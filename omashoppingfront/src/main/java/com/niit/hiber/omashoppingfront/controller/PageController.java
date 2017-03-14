@@ -4,8 +4,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -22,6 +26,8 @@ public class PageController {
 	@Autowired 
 	private ProductDAO productDAO;
 	
+	//@ModelAttribute("")
+	
 	/*@RequestMapping(value={"/","/home","/index"})
 	public ModelAndView index()
 	{
@@ -36,7 +42,9 @@ public class PageController {
 	@RequestMapping(value={"/","/home","/index","/Home"})
 	public ModelAndView index()
 	{
+		//System.out.println(prin.getName());
 		ModelAndView mv = new ModelAndView("page");
+		
 		mv.addObject("title","Home");
 		mv.addObject("categories", categoryDAO.list());
 		mv.addObject("userClickHome", true);
@@ -62,7 +70,7 @@ public class PageController {
 	
 	
 	
-	
+	/*
 	@RequestMapping("/admin/products/all")
 	public @ResponseBody List<Product> getAdminProd()
 	{
@@ -84,7 +92,7 @@ public class PageController {
 	
 	
 	
-	
+	*/
 	@RequestMapping(value="/products")
 	public   ModelAndView getAllProducts()
 	{
@@ -94,28 +102,31 @@ public class PageController {
 		mv.addObject("userClickProduct", true);
 		return mv;
 	}
-	/*
 	
-	@RequestMapping(value="/show/product/{id}")
+	
+	@RequestMapping(value="/show/{id}/product")
 	public ModelAndView getProduct(@PathVariable("id") int id)
 	{
 		ModelAndView mv = new ModelAndView("page");
 		mv.addObject("title","Product Description");
-		mv.addObject("greeting",id);
+		mv.addObject("product",productDAO.get(id));
+		mv.addObject("userClickSProduct", true);
 		return mv;
 	}
 	
 	
-	*/
 	
-	@RequestMapping(value={"/login","/Login"})
-	public ModelAndView login()
-	{
-		ModelAndView mv = new ModelAndView("Login");
-		mv.addObject("title","Login");
-		mv.addObject("userClickLogin", true);
-		return mv;
+	  // display the login view
+
+	@GetMapping("/login")
+	public String login(@RequestParam(value = "error", required = false)String error, Model model) {
+	if(error!=null) {
+	model.addAttribute("error","Authentication Failed - Invalid credentials!");
 	}
+	model.addAttribute("title", "Login");
+	return "login";
+	} 
+
 	
 	
 
