@@ -8,9 +8,10 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.hiber.omashoppingbackend.dao.CartItemDAO;
 import com.niit.hiber.omashoppingbackend.dao.ProductDAO;
-import com.niit.hiber.omashoppingbackend.dao.UserDAO;
+import com.niit.hiber.omashoppingbackend.dao.*;
 import com.niit.hiber.omashoppingbackend.dto.Cart;
-import com.niit.hiber.omashoppingbackend.dto.User;
+import com.niit.hiber.omashoppingbackend.dto.CartItem;
+import com.niit.hiber.omashoppingbackend.dto.*;
 
 
 
@@ -81,7 +82,8 @@ System.out.println(cart.getId() + " " + cart.getUser());
 	@Test
 	public void testUpdateCartItem() {
 				
-		CartItem cartItem = cartItemDAO.get(45);
+		CartItem cartItem = cartItemDAO.get(2);
+		System.out.println(cartItem.toString());
 		
 		Cart cart = cartItem.getCart();
 		

@@ -19,8 +19,9 @@
 				</div>
 				<div class="panel-body">
 				
-		
-				<c:forEach items="${cartitemlist}" var="cartitems">				
+				
+				<c:forEach items="${cartitemlist}" var="cartitems">	
+			
 				<div class="row">
 				
 						<div class="col-xs-2"><img class="img-responsive" src="${img}/${cartitems.productid}.jpg">

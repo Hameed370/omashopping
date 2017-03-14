@@ -9,8 +9,7 @@
 					class="icon-bar"></span> <span class="icon-bar"></span> <span
 					class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="${contextRoot}/home">Online
-				Shopping</a>
+			<a class="navbar-brand" href="${contextRoot}/home">Online Shopping</a>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse"
@@ -22,6 +21,7 @@
 				<!-- <li id="Admin">
                     <a href="${contextRoot}/myadmin">Admin</a>
                     </li> -->
+                    <!-- Spring security implementation -->
 				<security:authorize  access="hasAuthority('admin')">
 					<li class="dropdown"><a class="dropdown-toggle"
 						data-toggle="dropdown" href="#">ADMIN <span class="caret"></span></a>

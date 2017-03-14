@@ -28,6 +28,9 @@ import com.niit.hiber.omashoppingbackend.dto.Category;
 @RequestMapping("/admin")
 public class AdminController {
 
+	//this page is for category
+	
+	
 	@Autowired
 	private CategoryDAO categoryDAO;
 
@@ -42,6 +45,8 @@ public class AdminController {
 		return "page";
 	}
 
+	
+	//this method will return list of categories in the form of JSON 
 	@GetMapping("/allCategories")
 	@ResponseBody
 	public List<Category> allCategories() {
@@ -49,6 +54,9 @@ public class AdminController {
 		return categoryDAO.list();
 	}
 
+	
+	
+	//CODE FOR ADDING CATEGORY
 	@RequestMapping(value = "/addcategory", method = RequestMethod.POST)
 	public String submitForm(@Valid @ModelAttribute("category") Category category, BindingResult result,
 			SessionStatus status, ModelMap model) {

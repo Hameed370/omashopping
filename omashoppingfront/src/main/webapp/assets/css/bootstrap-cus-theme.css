@@ -4897,7 +4897,7 @@ textarea.input-group-sm>.form-control, textarea.input-group-sm>.input-group-addo
 }
 
 .navbar-default {
-	background-color: #e95420;
+	background-color: #804000;
 	border-color: #d34615
 }
 
@@ -7411,7 +7411,7 @@ button.close {
 
 .navbar-default .badge {
 	background-color: #fff;
-	color: #e95420
+	color: #800080
 }
 
 .navbar-inverse .badge {

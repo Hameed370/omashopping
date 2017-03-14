@@ -27,20 +27,20 @@
                                                         <tr>
                                                             <td colspan="2">
                                                                 <a class="btn btn-warning btn-sm pull-right"
-                                                                   href="http://www.startajobboard.com/"
+                                                                   href=""
                                                                    title="Remove Item">X</a>
-                                                                <b> Premium</b></td>
+                                                                <b> product</b></td>
                                                         </tr>
                                                         <tr>
                                                             <td>
                                                                 <ul>
-                                                                    <li>One Job Posting Credit</li>
-                                                                    <li>Job Distribution*</li>
-                                                                    <li>Social Media Distribution</li>
+                                                                    <li>product list</li>
+                                                                    <li>product list</li>
+                                                                    <li>product list</li>
                                                                 </ul>
                                                             </td>
                                                             <td>
-                                                                <b>$147.00</b>
+                                                                <b>amount </b>
                                                             </td>
                                                         </tr>
                                                     </table>
@@ -149,7 +149,7 @@
                                                         <option value="HI">Hawaii</option>
                                                         <option value="ID">Idaho</option>
                                                         <option value="IL">Illinois</option>
-                                                        <option value="IN">Indiana</option>
+                                                        <option value="IN">India</option>
                                                         <option value="IA">Iowa</option>
                                                         <option value="KS">Kansas</option>
                                                         <option value="KY">Kentucky</option>

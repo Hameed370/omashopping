@@ -124,6 +124,42 @@ public class CartController {
 		return "redirect:/customer/cart";
 	}
 	
+	@RequestMapping(value="/cart/delcart/{id}")
+	public String deletecartitem(@PathVariable("id") int id, Principal principal, Model mv) 
+	{
+		if (principal != null) 
+		{
+			user = userDAO.getUserByUserName(principal.getName());
+
+			if (user.getRole().equals("admin"))
+				return "redirect:/admin";
+		}
+		
+		Cart cart = user.getCart();
+		System.out.println(cart.getId() + " " + cart.getUser());
+				// get the product
+				Product product = productDAO.get(id);
+				CartItem cartItem = new CartItem();
+				int cartqty = cart.getCartItemsCount();
+				int cartquantity = cartItem.getQuantity();
+				double cartgt = cartItem.getTotalPrice();
+				cartquantity = cartquantity - 1;
+				cartgt = cartgt - product.getPrice();
+				cartqty = cartqty - 1;
+			//	cartItem.setCart(cart);
+				//cartItem.setProduct(product);
+				cartItem.setQuantity(cartquantity);
+				cartItem.setTotalPrice(product.getPrice() * cartItem.getQuantity());
+				cart.setGrandTotal(cart.getGrandTotal() + cartItem.getTotalPrice());
+				cart.setCartItemsCount(cart.getCartItemsCount() - 1);
+				cartItemDAO.add(cartItem);
+		
+		
+		return "redirect:/customer/cart";
+	}
+	
+	
+	
 	
 	
 

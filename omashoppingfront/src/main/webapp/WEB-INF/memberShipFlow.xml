@@ -2,6 +2,7 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
+
 	<!-- It will create an instance and keep it inside flowScope -->
 	<var name="user" class="com.niit.hiber.omashoppingbackend.dto.User" />
 	<var name="address" class="com.niit.hiber.omashoppingbackend.dto.Address" />
@@ -12,8 +13,8 @@
 		<evaluate expression="registerHandler.initFlow()" result="flowScope.registerModel" />
 	</on-start>
 
-
-	<view-state id="start" view="registration/register" model="floscope.user">
+<!--start view is register page   -->
+	<view-state id="start" view="registration/register" model="flowScope.user">
 		<transition on="submit" to="billing" />
 		<on-exit>
 			<evaluate expression="registerHandler.saveUser(registerModel,user)"></evaluate>
@@ -22,7 +23,7 @@
 
 
 	<!-- User enters Billing Address -->
-	<view-state id="billing" view="registration/billing" model="floscope.address">
+	<view-state id="billing" view="registration/billing" model="flowScope.address">
 		<transition on="submit" to="confirm" />
 		<on-exit>
 			<evaluate expression="registerHandler.saveAddress(registerModel,address)"></evaluate>
@@ -34,13 +35,13 @@
 		<transition on="submit" to="save" />
 	</view-state>
 
-
+<!-- action states transition-->
 	<action-state id="save">
 		<evaluate expression="registerHandler.saveRegistrationDetails(flowScope.registerModel)"></evaluate>
 		<transition on="success" to="welcome" />
 		<transition on="failure" to="start" />
 	</action-state>
-
+<!-- end state for webflow -->
 	<end-state id="welcome" view="registration/welcome" />
 	<end-state id="toHome" view="externalRedirect:contextRelative:/page.jsp" />
 	<end-state id="toException"	view="externalRedirect:contextRelative:exception.jsp" />

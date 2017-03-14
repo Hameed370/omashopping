@@ -55,7 +55,7 @@
 		<%-- <a href="${contextRoot}/login"><span
 			class="glyphicon glyphicon-user"></span> Login</a> --%>
 		<h2>Welcome , you have successfully registered .</h2>
-		<h2>USERNAME: ${user.username}</h2><br>
+		<h2>USERNAME: ${user.email}</h2><br>
 		<a href="${contextRoot}/login"><input type="submit" class="btn btn-primary btn-lg" value="Login" /></a>
 		
 	</div>

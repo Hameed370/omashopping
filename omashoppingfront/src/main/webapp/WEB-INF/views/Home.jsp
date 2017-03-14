@@ -55,7 +55,7 @@
                                 <h4 class="pull-right">$24.99</h4>
                                 <h4><a href="#">First Product</a>
                                 </h4>
-                                <p>See more snippets like this online store item at <a target="_blank" href="http://www.bootsnipp.com">Bootsnipp - http://bootsnipp.com</a>.</p>
+                                <p></p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
@@ -74,7 +74,7 @@
                         <div class="thumbnail">
                             <img src="${img}/2.jpg" height="150" width="320" alt="tpu case">
                             <div class="caption">
-                                <h4 class="pull-right">$64.99</h4>
+                                <h4 class="pull-right">Rs.300</h4>
                                 <h4><a href="#">Second Product</a>
                                 </h4>
                                 <p>This is a short description.</p>
@@ -96,7 +96,7 @@
                         <div class="thumbnail">
                             <img src="${img}/3.jpg" height="150" width="320" alt="headphones">
                             <div class="caption">
-                                <h4 class="pull-right">$74.99</h4>
+                                <h4 class="pull-right">Rs.300</h4>
                                 <h4><a href="#">Third Product</a>
                                 </h4>
                                 <p>This is a short description.</p>
